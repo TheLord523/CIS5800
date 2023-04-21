@@ -7,6 +7,20 @@ import json
 #this file is a blueprint of our application (bunch of routes/URLS defined in it)
 views = Blueprint('views', __name__)
 
+@views.route('/home-faculty', methods = ['GET', 'POST'])
+@login_required
+def home_faculty():
+    if request.method == 'POST':
+        note = request.form.get('note')
+        if len(note) < 1:
+            flash("Note is too short!", category = 'error')
+        else:
+            new_note = Note(data=note, user_id = current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash("Note added!", category = 'success')
+    return render_template("home_faculty.html", user = current_user)
+
 
 @views.route('/', methods = ['GET', 'POST'])
 @login_required

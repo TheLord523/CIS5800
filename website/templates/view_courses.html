@@ -4,17 +4,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel = "stylesheet" type = "text/css" href="static/css/style.css">
+<style>
+.search-container {
+    float: right;
+}
+.search-bar {
+    float: right;
+}
+</style>
 <head>
     <meta charset="UTF-8">
 </head>
 <body>
 <div id="header">
+    <div class = "text">
+        <h1> <u> View Courses </u> </h1>
+    
+    </div>
     <img class = "logo" 
     src = "static/css/woodCollege.png" alt = ""> 
-    <div class="container">
+    <div class="search-container">
         <form action=" " class="search-bar">
-            <input type="text" placeholder="search courses" name = "q">
-            <button type = "submit"><img src="static/css/search.png" > </button>
+            <input type="text" placeholder="search courses" name = "search">
+            <button type = "submit"><i class="fa fa-search"></i></button> <!-- fa fa-search is the search button image-->
         </form> 
     <!--<img src = "static/css/woodCollege.png" alt = ""> -->
 </div>
